@@ -1,11 +1,25 @@
 """
 COMP 163 - Project 1: Character Creator & Saving/Loading
-Name: [Your Name Here]
-Date: [Date]
+Name: [Talib  Lyon]
+Date: [10/22/25]
 
 AI Usage: [Document any AI assistance used]
 Example: AI helped with file I/O error handling logic in save_character function
 """
+# --- CONFIGURATION ---
+
+# The character's level 1 GOLD is a starting constant (Bonus Creative Element: Simple Gold System).
+STARTING_GOLD = 100 
+
+# Stat Definition: (STR_base, MAG_base, HP_base, STR_growth, MAG_growth, HP_growth)
+# Design Choice: Fantasy-themed stats with distinct class roles
+# Stat Formula is: Stat = Base + (Level * Growth)
+CLASS_STATS = {
+    "WARRIOR": (12, 4, 100, 4, 1, 30), # High strength, low magic, high health
+    "MAGE":    (4, 15, 80, 1, 5, 20),  # Low strength, high magic, medium health
+    "ROGUE":   (8, 8, 90, 2, 2, 25),  # Medium strength, medium magic, medium health
+    "CLERIC":  (8, 10, 110, 2, 3, 35), # Medium strength, high magic, very high health
+}
 
 def create_character(name, character_class):
     """
